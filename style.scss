@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+$white-color: #ffffff;
+@mixin font-prop($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #172938;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.vidget {
+  display: flex;
+  flex-direction: column;
+  margin: 3% auto;
+  width: 696px;
+  background-color: #dcdfe1;
+  background-image: url("src/paris.jpg");
+  background-repeat: no-repeat;
+  color: $white-color;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 66px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.weather {
+  display: flex;
+  padding: 70px 72px;
+  margin-left: auto;
+  margin-bottom: 25px;
+  &__date {
+    margin-right: 34px;
+  }
+  &__day {
+    @include font-prop(30px, 34px, 300);
+  }
+  &__mounth-day {
+    @include font-prop(14px, 18px, 400);
+  }
+  &__degrees {
+    @include font-prop(92px, 86px, 800);
+  }
+  &__place {
+    margin: 4px 0 16px;
+    @include font-prop(22px, 26px, 300);
+  }
+  &__wind {
+    @include font-prop(26px, 30px, 800);
+  }
+  &__mph{
+    @include font-prop(14px, 18px, 700);
+  }
+  &__wind-info {
+    display: flex;
+  }
+  &__wind-img {
+    margin-right: 12px;
+  }
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-content: center;
+  padding: 8px 28px 12px;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    &:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.5);
+    }
+  }
+  &__title, &__degrees {
+    @include font-prop(16px, 20px, 300);
+  }
+  &__img {
+    margin: 6px 0;
+  }
+}
