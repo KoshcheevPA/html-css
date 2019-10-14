@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -135,6 +140,78 @@ body {
   .vidget__container {
     padding: 0 9%;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+@media screen and (max-width: 480px) {
+  .weather {
+    align-items: center;
+    padding: 22px 16px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .weather__status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .weather__date {
+    margin-right: 0;
+  }
+  .weather__day {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+  }
+  .weather__mounth-day {
+    font-size: 8px;
+    line-height: 12px;
+    font-weight: 400;
+  }
+  .weather__degrees {
+    font-size: 78px;
+    line-height: 70px;
+    font-weight: 800;
+  }
+  .weather__place {
+    margin: 2px 0 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
+  }
+  .weather__wind {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 800;
+  }
+  .weather__mph {
+    font-size: 8px;
+    line-height: 12px;
+    font-weight: 700;
+  }
+  .weather__wind-info {
+    display: flex;
+  }
+  .weather__wind-img {
+    margin-right: 6px;
+  }
+
+  .vidget {
+    min-width: 280px;
+    flex-shrink: 1;
+    background-position: left;
+  }
+  .vidget__svg {
+    display: none;
+  }
+
+  .days__item {
+    flex-direction: row;
+    margin: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 0;
+  }
+  .days__item:not(:last-child) {
+    border: 0;
   }
 }
 
