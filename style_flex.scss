@@ -37,20 +37,35 @@ body {
 }
 
 .vidget {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin: 3% auto;
   max-width: 696px;
   min-width: 580px;
+  -ms-flex-negative: 1;
   flex-shrink: 1;
   background-color: #dcdfe1;
   background-image: url("src/paris.jpg");
   background-repeat: no-repeat;
   color: $white-color;
   &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 0 9%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -58,10 +73,13 @@ body {
 }
 
 .weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 70px 72px;
   margin-left: auto;
   margin-bottom: 25px;
+  -ms-flex-negative: 1;
   flex-shrink: 1;
   &__date {
     margin-right: 34px;
@@ -86,6 +104,8 @@ body {
     @include font-prop(14px, 18px, 700);
   }
   &__wind-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   &__wind-img {
@@ -94,19 +114,42 @@ body {
 }
 
 .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
+  -ms-flex-negative: 1;
   flex-shrink: 1;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -ms-flex-line-pack: center;
   align-content: center;
   padding: 1% 4% 2%;
   &__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     &:not(:last-child) {
       border-right: 1px solid rgba(255,255,255,0.5);
@@ -122,16 +165,23 @@ body {
 
 @media screen and (max-width: 600px) {
   .weather {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 46px 32px;
     margin-left: auto;
+    -ms-flex-negative: 1;
     flex-shrink: 1;
   }
 
   .vidget {
     margin: 3% auto;
     min-width: 460px;
+    -ms-flex-negative: 1;
     flex-shrink: 1;
     background-repeat: no-repeat;
 
@@ -145,13 +195,22 @@ body {
 
 @media screen and (max-width: 480px) {
   .weather {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 22px 16px;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.3);
     &__status {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
     }
     &__date {
@@ -177,6 +236,8 @@ body {
       @include font-prop(8px, 12px, 700);
     }
     &__wind-info {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
     &__wind-img {
@@ -187,6 +248,7 @@ body {
 
   .vidget {
     min-width: 280px;
+    -ms-flex-negative: 1;
     flex-shrink: 1;
     background-position: left;
     &__svg {
@@ -195,6 +257,9 @@ body {
   }
   .days {
     &__item {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
       margin: 4px;
       background-color: rgba(255,255,255,0.2);
