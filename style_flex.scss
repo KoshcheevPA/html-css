@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+$white-color: #ffffff;
+@mixin font-prop($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #172938;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.vidget {
+  display: flex;
+  flex-direction: column;
+  margin: 3% auto;
+  max-width: 696px;
+  min-width: 580px;
+  flex-shrink: 1;
+  background-color: #dcdfe1;
+  background-image: url("src/paris.jpg");
+  background-repeat: no-repeat;
+  color: $white-color;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 9%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.weather {
+  display: flex;
+  padding: 70px 72px;
+  margin-left: auto;
+  margin-bottom: 25px;
+  flex-shrink: 1;
+  &__date {
+    margin-right: 34px;
+  }
+  &__day {
+    @include font-prop(30px, 34px, 300);
+  }
+  &__mounth-day {
+    @include font-prop(14px, 18px, 400);
+  }
+  &__degrees {
+    @include font-prop(92px, 86px, 800);
+  }
+  &__place {
+    margin: 4px 0 16px;
+    @include font-prop(22px, 26px, 300);
+  }
+  &__wind {
+    @include font-prop(26px, 30px, 800);
+  }
+  &__mph{
+    @include font-prop(14px, 18px, 700);
+  }
+  &__wind-info {
+    display: flex;
+  }
+  &__wind-img {
+    margin-right: 12px;
+  }
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 1% 4% 2%;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    &:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.5);
+    }
+  }
+  &__title, &__degrees {
+    @include font-prop(16px, 20px, 300);
+  }
+  &__img {
+    margin: 6px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .weather {
+    display: flex;
+    flex-direction: column;
+    padding: 46px 32px;
+    margin-left: auto;
+    flex-shrink: 1;
+  }
+
+  .vidget {
+    margin: 3% auto;
+    min-width: 460px;
+    flex-shrink: 1;
+    background-repeat: no-repeat;
+
+    &__container {
+      padding: 0 9%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .weather {
+    align-items: center;
+    padding: 22px 16px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    &__status {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__date {
+      margin-right: 0;
+    }
+    &__day {
+      @include font-prop(24px, 28px, 300);
+    }
+    &__mounth-day {
+      @include font-prop(8px, 12px, 400);
+    }
+    &__degrees {
+      @include font-prop(78px, 70px, 800);
+    }
+    &__place {
+      margin: 2px 0 10px;
+      @include font-prop(16px, 20px, 300);
+    }
+    &__wind {
+      @include font-prop(20px, 24px, 800);
+    }
+    &__mph{
+      @include font-prop(8px, 12px, 700);
+    }
+    &__wind-info {
+      display: flex;
+    }
+    &__wind-img {
+
+      margin-right: 6px;
+    }
+  }
+
+  .vidget {
+    min-width: 280px;
+    flex-shrink: 1;
+    background-position: left;
+    &__svg {
+      display: none;
+    }
+  }
+  .days {
+    &__item {
+      flex-direction: row;
+      margin: 4px;
+      background-color: rgba(255,255,255,0.2);
+      &:not(:last-child) {
+        border: 0;
+      }
+      border: 0;
+    }
+  }
+}
